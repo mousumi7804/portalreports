@@ -181,6 +181,26 @@ public partial class OnlineReport_AgeingReportFinal : System.Web.UI.Page
 
 
 
+        StaticData itmstat = (new RptDocVisitDL()).GetDropdownData(monthsearch);
+        src_rsm.DataSource = itmstat.lstrsm;
+        src_rsm.DataBind();
+
+        src_district.DataSource = itmstat.lstdistrict;
+        src_district.DataBind();
+
+        src_employee.DataSource = itmstat.lstemployee;
+        src_employee.DataBind();
+
+        src_designation.DataSource = itmstat.lstdesignation;
+        src_designation.DataBind();
+
+        src_asm.DataSource = itmstat.lstasm;
+        src_asm.DataBind();
+
+        src_mfso.DataSource = itmstat.lstmsr;
+        src_mfso.DataBind();
+
+
     }
 
     protected void btnReset_Click(object sender, EventArgs e)
@@ -232,7 +252,7 @@ public partial class OnlineReport_AgeingReportFinal : System.Web.UI.Page
         src_div.SelectedValue = "eva".ToUpper();
 
 
-        StaticData itmstat = (new RptDocVisitDL()).GetDropdownData("'august'");
+        StaticData itmstat = (new RptDocVisitDL()).GetDropdownData("'" + prevmonth + "'");
         src_rsm.DataSource = itmstat.lstrsm;
         src_rsm.DataBind();
 
